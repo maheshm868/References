@@ -1,0 +1,117 @@
+// commiting your changes - pushing your changes to a repository
+
+git status
+git add .
+git commit -m "some style corrections" --no-verify
+git pull origin branchName
+git push origin branchName
+git status
+
+// deploying spfx solution
+
+gulp clean --ship
+gulp build --ship
+gulp bundle --ship
+gulp package-solution --ship
+
+// cloning 
+
+git clone urlForTheRepository
+
+
+https://marque360.com/aggregating-sharepoint-list-data-in-power-bi/
+
+#######################################################
+
+gulp serve
+gulp serve --max_old_space_size=8192
+
+// linting command 
+
+npm run lint:html
+npm run format //
+
+if file not found error then Take files from temp/deploy/copy all files and paste it in CDN path of the solution
+
+########################################################
+a.	git pull – Use this command to pull all the files in your local
+b.	git status – Use this command to know which files are checked out by you
+c.	git add <file url from git status> – Use this command to add files ONE by ONE.
+d.	git add . – Use this command to add all the files at once.
+e.	git commit -m “check in comment” – use this command to commit all the changes which are added using git add
+f.	git push origin dev – use this command to push all the changes to GIT. Until push is done, that change will not available to the team.
+9.	Make sure that you always work on dev branch. In case you are on master  branch, use git checkout dev  to switch to dev branch.
+
+=====to reset local repo to one as remote repo======
+git fetch origin
+git reset --hard origin/master =>master or branch u need to restore
+=====To remove the untracted files if any===========
+git clean -n -f
+git clean -f
+=========to delete local test==========
+https://stackoverflow.com/questions/3046436/how-do-you-stop-tracking-a-remote-branch-in-git
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+While pushing code to dev branch ---
+1. Checkout to dev branch - git checkout Dev
+2. git merge Mahesh
+3. git pull origin Dev -- verify manually that all changes are available in local system.
+4. git push origin Dev
+
+
+Move to branch where change is to be merged
+git checkout mahesh
+git merge Phase2
+git push origin mahesh
+ 
+ 
+While merging always make sure changes are in local
+
+Check status before pushing to your branch
+
+?loadSPFX=true&debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js
+
+Mastering SharePoint Framework SPFx Development
+    
+Beginning Modern JavaScript (Includes 10 Real Projects) (udemy.com) - 21.5
+The Modern JavaScript Bootcamp: Complete JavaScript Tutorial (udemy.com) - 29.5
+https://eylearning.udemy.com/course/advanced-javascript-concepts/ - 25
+
+
+////////////////////////////SAVE LOCAL PROJECT//////////////////////////
+If you are planning to push out a new local branch that
+will track its remote counterpart, you may want to use
+"git push -u" to set the upstream config as you push.
+
+1. git remote add StyleSheetLoader urlOfRepo
+
+and then push using the remote name
+
+2. git push StyleSheetLoader
+
+
+/////////////Push an existing repository from command line//////////////
+
+git remote add origin UrlOfRepo
+git push -u origin --all
+
+////////////////////////
+
+gulp serve --nobrowser --max_old_space_size=8192
+
+gulp bundle --max_old_space_size=8192 --ship
+
+
+////////////////////////////
+
+In order to avoid this error we need to increase nodejs heap size. On Windows it can be done by the following method:
+
+Run the following command in your terminal client:
+setx -m NODE_OPTIONS "--max-old-space-size=8192"
+
+(after that NOTE_OPTIONS should be added to PC > Advanced properties > Environment variables)
+Restart terminal session which is used for running gulp to ensure that new env variables will be applied.
+Run web server:
+     gulp serve --nobrowser
+After that your solution should be built without heap out of memory error.
